@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Almendra');
+$color-body:white;
+//variables
+*{
+    padding:0;
+    margin:0;
+ }
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: poly, Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+body {
+    color:$color-body;
+    margin: 0;
+    padding: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+//anidacion dentro del header usando &
+header {
+    
+    box-sizing: border-box;
+    min-height: 100vh;
+     position: relative; 
+     transform-style: inherit;
+    width: 100vw;
+    text-align: center;
+    text-transform: uppercase;
+    & h1 {
+        margin: 0;
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        text-shadow: -5px 0px 7px black
+    
+    }
+}
+
+
+
+/* header,
+header:before {
+    background: 50% 50% / cover;
+} */
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background: url(../img/playa_chica.jpg);
+    background-size: cover;
+    /* 
+    transform-origin: center center 0;
+     transform: translateZ(-1px) scale(2); 
+     z-index: -1; 
+    min-height: 100vh; */
+}
+
+.container {
+    /* z-index: 2; */
+    position: absolute;
+    top: 100vh;
+    background: rgb(1, 63, 81);
+    line-height: 30px;
+    font-weight: lighter;
+    padding: 40px;
+    color: grey;
+    font-size: 16px;
+}
+#logo-main {
+     /* display:flex;
+    align-content:flex-start;   */
+     width:100px;
+      margin-top: 10px  
+}
+.texto-background{
+    height: 700px;
+	
+	/* Flebox */
+	display: flex;
+	 flex-direction: column; 
+	 justify-content: space-between; 
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+}
+
+
+header p {
+    display:flex;
+    font-size: 22px;
+    color:black;
+    align-content: flex-end;
+    margin-left: 10px;
+}
+.container q {
+    font-size: x-large;
+}
+
+.intro{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+}
+.slider{
+    position:fixed ;
+    top:0 ;
+    left: 0;
+    background-color:#18181a ;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+}
+
+.nav {
+    background-color: rgba(0,0 ,0, 0.2);
+    width: 100%;  
+    position: sticky;
+    top: 0; /* it does not reposition right away,
+               but determines at which point it sticks */ 
+    & ul{
+        text-align: center;
+        }
+    & ul li a{
+            color: #fff;
+            display: block;
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 2px;
+            font-weight:200 ;
+            padding:10px ;
+            transition: all ease 0.5s; 
+        
+        }
+    & ul li a:hover{
+            background-color: #211b4385;
+        }
+    & ul li{
+            list-style: none;
+            display: inline-block;
+        }
+}
+
+
+  @media (max-width: 600px) {
+    body {
+     font-size:12px ;
+     ;
+    }
+    header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        background: url(../img/playa_chica.jpg);
+        background-size:cover;
+        /* 
+        transform-origin: center center 0;
+         transform: translateZ(-1px) scale(2); 
+         z-index: -1; 
+        min-height: 100vh; */
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .nav ul li {
+      display: flex ;
+      flex-direction: row;
+      justify-content: center;
+    }
+    header h1 {
+        font-size: 35PX;
+               
+         transform: translate(-25%, 50%); 
+        text-shadow: -5px 0px 7px black;
+        text-align: center;
+    
+    }
+    #logo-main {
+                 margin-top: 20px  
+   }
+  
+  }
+
+  
+
+
+  
